@@ -18,6 +18,6 @@ Feature: Golf Course Management
         Then the changes should be saved successfully
         And the updated details should be visible when the course is viewed
     
-    Scenatio: Oversee all existing golf courses
+    Scenario: Oversee all existing golf courses
         When the administrator views the list of all golf courses
         Then the system should display all existing courses
