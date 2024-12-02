@@ -13,7 +13,11 @@
 package de.hse.golfclubmanagement.repositories;
 
 import de.hse.golfclubmanagement.models.Tournament;
+
+import java.sql.Date;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
 
 /**
  * Repository interface for Tournament entity.
@@ -24,10 +28,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface TournamentRepository extends JpaRepository<Tournament, Long> {
 
     /**
-     * Finds a Tournament by its name.
+     * Finds a Tournament by its name/date/id.
      * 
      * @param name the name of the Tournament to find
      * @return the Tournament with the specified name, or null if none found
      */
     Tournament findByName(String name);
+    Tournament findByDate(Date date);
+    Optional<Tournament> findById(Long id);
+    Tournament findByLocation(String location);
 }
